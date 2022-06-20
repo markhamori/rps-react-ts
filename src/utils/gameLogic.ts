@@ -1,35 +1,11 @@
-export const gameLogic = (userOption: string, compOption: string): void => {
-  if (userOption === compOption) console.log("Draw");
-  if (userOption === "rock" && compOption === "paper") console.log("Comp win.");
-  if (userOption === "rock" && compOption === "scissor")
-    console.log("User win.");
-  if (userOption === "scissor" && compOption === "paper")
-    console.log("User win.");
-  if (userOption === "scissor" && compOption === "rock")
-    console.log("Comp win.");
-  if (userOption === "rock" && compOption === "scissor")
-    console.log("User win.");
+export const gameLogic = (userOption: string, compOption: string): number => {
+  if (userOption === "rock" && compOption === "paper") return 1;
+  if (userOption === "rock" && compOption === "scissor") return 0;
+  if (userOption === "scissor" && compOption === "paper") return 0;
+  if (userOption === "scissor" && compOption === "rock") return 1;
+  if (userOption === "rock" && compOption === "scissor") return 0;
+  if (userOption === "paper" && compOption === "scissor") return 1;
+  if (userOption === "paper" && compOption === "rock") return 0;
 
-  console.log("No match");
+  return 2;
 };
-
-function chooseWinner(possibleWays): void {
-  possibleWays.forEach((option) => {
-    console.log(option.description);
-    option.printWinnerText();
-  });
-}
-
-class UserIsAWinner {
-  description: string;
-
-  constructor(description: string) {
-    this.description = description;
-  }
-
-  printWinnerText() {
-    console.log("Congratz! You win!");
-  }
-}
-
-const possibleWays = [new UserIsAWinner("User win.")];

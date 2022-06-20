@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { selected } from "../features/selected/Selected";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppDispatch } from "../app/hooks";
 
 const Select = () => {
   const dispatch = useAppDispatch();
@@ -13,13 +13,13 @@ const Select = () => {
     <div>
       <Link to="/playground">
         <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
-          Rock
+          rock
         </button>
         <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
-          Paper
+          paper
         </button>
         <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
-          Scissors
+          scissor
         </button>
       </Link>
     </div>
