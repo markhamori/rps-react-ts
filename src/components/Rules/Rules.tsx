@@ -3,7 +3,7 @@ import "./Rules.css"
 
 const Rules = () => {
   return (
-    <div>Rules</div>
+    <button>Rules</button>
   )
 }
 

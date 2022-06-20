@@ -1,19 +1,19 @@
 import { Fragment } from 'react';
 
 // Components
-import PlayArea from './components/PlayArea/PlayArea';
-import Rules from './components/Rules/Rules';
+import Main from './components/Main/Main';
 
 // Styles
 import './App.css';
 
 const App = () => {
   return (
-    <Fragment>
-      <PlayArea/>
-      <Rules/>
-    </Fragment>
-  );
-}
+  <Fragment>
+    <h1>Welcome! Loading...</h1>
+    <Main/>
+  </Fragment>
+  )
+};
+
 
 export default App;
