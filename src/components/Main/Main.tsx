@@ -1,18 +1,19 @@
-import React from 'react';
-
-// Styles
-import "./Main.css";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
     <div>
-      <h1>Rock, paper, scissors</h1>
-      <p>Start the game</p>
-      <button>Start</button>
-      <p>Read the rules</p>
-      <button>Rules</button>
+      <h1>Main component</h1>
+      <Link to="/select">
+        <button>Start</button>
+      </Link>
+      <button>Reset</button>
+      <Link to="/rules">
+        <button>Rules</button>
+      </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

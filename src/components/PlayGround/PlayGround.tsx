@@ -1,12 +1,32 @@
-import React from 'react'
+import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { userScore, compScore } from "../features/scores/Scores";
+import { generatedOption } from "../../utils/computerNumGen";
+import { gameLogic } from "../../utils/gameLogic";
 
-// Style
-import "./PlayGround.css";
+const Playground = () => {
+  const [compSelected, setCompSelected] = useState<string>("");
+  const selected = useAppSelector((state) => state.selected.selected);
+  const score = useAppSelector((state) => state.score);
+  const dispatch = useAppDispatch();
 
-const PlayGround = () => {
+  useEffect(() => {
+    setCompSelected(generatedOption());
+  }, []);
+
   return (
-    <div>PlayGround</div>
-  )
-}
+    <div>
+      <h1>Playground page</h1>
+      <p>You: {score.userScore}</p>
+      <p>Comp: {score.compScore}</p>
+      <hr />
+      <p>{selected}</p>
+      <p>{compSelected && compSelected}</p>
+      <hr />
+      <button onClick={() => dispatch(userScore())}>User+</button>
+      <button onClick={() => dispatch(compScore())}>Comp+</button>
+    </div>
+  );
+};
 
-export default PlayGround
+export default Playground;

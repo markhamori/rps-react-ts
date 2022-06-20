@@ -1,12 +1,29 @@
-import React from 'react'
-
-// Style
-import "./Select.css";
+import { Link } from "react-router-dom";
+import { selected } from "../features/selected/Selected";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 
 const Select = () => {
-  return (
-    <div>Select</div>
-  )
-}
+  const dispatch = useAppDispatch();
 
-export default Select
+  const handleSelect = (e: any) => {
+    return e.target.textContent;
+  };
+
+  return (
+    <div>
+      <Link to="/playground">
+        <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
+          Rock
+        </button>
+        <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
+          Paper
+        </button>
+        <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
+          Scissors
+        </button>
+      </Link>
+    </div>
+  );
+};
+
+export default Select;

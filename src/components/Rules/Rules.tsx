@@ -1,10 +1,15 @@
-import React from 'react'
-import "./Rules.css"
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Rules = () => {
   return (
-    <button>Rules</button>
-  )
-}
+    <div>
+      <h1>Rules</h1>
+      <Link to="/">
+        <button>Back</button>
+      </Link>
+    </div>
+  );
+};
 
-export default Rules
+export default Rules;
