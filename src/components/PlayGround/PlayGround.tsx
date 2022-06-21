@@ -42,22 +42,32 @@ const Playground = () => {
 
   return (
     <div className="playground">
+     
+      <div className="playground__scores">
+        <h2><span>{score.userScore}</span><br/>You</h2>
+        <h2><span>{score.compScore}</span><br/>Comp</h2>
+      </div>
+
       <div className="playground__result">
-        <h2>
+        <h1>
           {gameLogic(selected, compSelected) === 0 ? "You won! Congratz!" : ""}
           {gameLogic(selected, compSelected) === 1 ? "Sorry, computer won." : ""}
           {gameLogic(selected, compSelected) === 2 ? "It's a Draw." : ""}
-        </h2>
+        </h1>
       </div>
-      <div className="playground__scores">
-        <h1><span>{score.userScore}</span><br/>You</h1>
-        <h1><span>{score.compScore}</span><br/>Comp</h1>
-      </div>
+
       <div className="playground__images">
-        <img src={`./images/${selected}.svg`} alt={selected} />
-        {compSelected && (
-          <img src={`./images/${compSelected}.svg`} alt={compSelected} />
-        )}
+        <div className="playground__images--div">
+          <img src={`./images/${selected}.svg`} alt={selected} />
+          <p>{selected}</p>
+        </div>
+        <div className="playground__images--div">
+          {compSelected && (
+            <img src={`./images/${compSelected}.svg`} alt={compSelected} />
+            )}
+          <p>{compSelected && compSelected}</p>
+        </div>
+        
       </div>
       
       <div>

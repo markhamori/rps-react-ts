@@ -31,13 +31,6 @@ body {
   overflow: hidden;
 }
 
-section {
-  min-height: 100vh;
-  max-width: 1000px;
-  padding: 100px 0px;
-  margin: 0px auto;
-}
-
 h1 {
   font-size: var(--fs-heading);
   color: var(--clr-dark);
@@ -148,14 +141,16 @@ button:focus {
 .playground__scores {
   display: flex;
   flex-direction: row;
-  gap: 10rem;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
 }
 
-.playground__scores h1 span {
+.playground__scores h2 span {
   display: inline-block;
   text-align: center;
   border-radius: 10px;
-  width: 80px;
+  width: 70px;
   background-color: rgba(183, 21, 90, 0.9);
   color: var(--clr-light);
 }
@@ -163,22 +158,28 @@ button:focus {
 .playground__images {
   position: relative;
   display: flex;
+  flex-direction: row;
+  gap: 5rem;
   justify-content: center;
   width: 100%;
 }
 
-.playground__images img:nth-child(1) {
-  display: block;
-  position: absolute;
-  left: 0;
-  height: 200px;
-  opacity: 30%;
+.playground__images--div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-.playground__images img:nth-child(2) {
-  display: block;
-  position: absolute;
-  right: 0;
-  height: 200px;
-  opacity: 30%;
+.playground__images--div p {
+  padding-top: 0.3rem;
+  width: 120px;
+  height: 40px;
+  background-color: var(--clr-light);
+  border: 2px solid var(--clr-mid);
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
