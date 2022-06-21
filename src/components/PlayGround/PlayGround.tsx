@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // State management
 import { useAppDispatch, useAppSelector } from "../app/hooks";
@@ -6,15 +7,6 @@ import { userScore, compScore } from "../features/scores/Scores";
 
 // Utils
 import { gameLogic, generatedOption } from "../../utils/gameLogic";
-
-// Components
-import Select from "../Select/Select";
-import { Link } from "react-router-dom";
-
-// Images
-import rock from "../../images/rock.svg"
-import paper from "../../images/paper.svg"
-import scissors from "../../images/scissors.svg"
 
 const Playground = () => {
   const [compSelected, setCompSelected] = useState<string>("");
@@ -76,6 +68,7 @@ const Playground = () => {
             Play again?
             </button>
           </Link>
+          <p className="playground__infoText">Refresh the page if you want <br/> to reset the current score.</p>
       </div>
       
     </div>

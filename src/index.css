@@ -117,6 +117,7 @@ button:focus {
 .rules__modal p {
   font-size: 14px;
   text-align: justify;
+  animation: slideIn .6s ease forwards;
 }
 
 .rules__modal p span {
@@ -156,6 +157,7 @@ button:focus {
 .playground__scores h2 span {
   display: inline-block;
   text-align: center;
+  margin: auto;
   border-radius: 10px;
   width: 70px;
   background-color: rgba(183, 21, 90, 0.9);
@@ -189,6 +191,12 @@ button:focus {
   border-radius: 20px;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+.playground__infoText {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: var(--clr-dark);
 }
 
 @keyframes slideIn {

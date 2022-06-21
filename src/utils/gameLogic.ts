@@ -10,7 +10,8 @@ const randomNumber = (): number => {
 
 export const generatedOption = (): string => options[randomNumber()];
 
-export const gameLogic = (userOption: string, compOption: string): number => {
+// Game logic old version
+export const gameLogic2 = (userOption: string, compOption: string): number => {
   if (userOption === "rock" && compOption === "scissors") return 0;
   if (userOption === "scissors" && compOption === "paper") return 0;
   if (userOption === "paper" && compOption === "rock") return 0;
@@ -21,3 +22,24 @@ export const gameLogic = (userOption: string, compOption: string): number => {
 
   return 2;
 };
+
+// Game logic new version
+export const gameLogic = (userOption: string, compOption: string): number => {
+  switch (userOption) {
+    case "rock":
+      if(compOption === "scissors") return 0
+      if(compOption === "paper") return 1
+      break
+
+    case "scissors":
+      if(compOption === "paper") return 0
+      if(compOption === "rock") return 1
+      break
+
+    case "paper":
+      if(compOption === "rock") return 0
+      if(compOption === "scissors") return 1
+      break
+  }
+  return 2
+}
