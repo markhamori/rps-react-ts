@@ -11,12 +11,13 @@ const randomNumber = (): number => {
 export const generatedOption = (): string => options[randomNumber()];
 
 export const gameLogic = (userOption: string, compOption: string): number => {
-  if (userOption === "rock" && compOption === "paper") return 1;
   if (userOption === "rock" && compOption === "scissors") return 0;
   if (userOption === "scissors" && compOption === "paper") return 0;
-  if (userOption === "scissors" && compOption === "rock") return 1;
-  if (userOption === "rock" && compOption === "scissors") return 0;
-  if (userOption === "paper" && compOption === "scissors") return 1;
   if (userOption === "paper" && compOption === "rock") return 0;
+
+  if (userOption === "scissors" && compOption === "rock") return 1;
+  if (userOption === "paper" && compOption === "scissors") return 1;
+  if (userOption === "rock" && compOption === "paper") return 1;
+
   return 2;
 };

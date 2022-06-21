@@ -107,6 +107,11 @@ button:focus {
   padding: 0.5rem;
   background: linear-gradient(180deg, rgba(244, 3, 84, 0.9) 0%, rgba(183, 21, 90, 0.9) 100%);
   border-radius: 30px;
+  animation: slideUp .5s ease forwards;
+}
+
+.rules__modal {
+  animation: expand .3s ease forwards;
 }
 
 .rules__modal p {
@@ -132,10 +137,12 @@ button:focus {
   align-items: center;
   justify-content: center;
   text-align: center;
+  animation: slideIn .4s ease forwards;
 }
 
 .playground__result {
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 .playground__scores {
@@ -182,4 +189,31 @@ button:focus {
   border-radius: 20px;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(500px) scale(.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: translateX(1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
