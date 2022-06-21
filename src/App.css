@@ -1,0 +1,47 @@
+.app {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+}
+
+.app__rules {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 450px;
+  border-top-left-radius: 10px;
+  z-index: 999;
+  background-color: var(--clr-light);
+  overflow-x: hidden;
+}
+
+.app__rules--handler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 32px;
+  color: var(--clr-light);
+  padding: 0.5rem;
+  background: linear-gradient(
+    180deg,
+    var(--clr-primary) 0%,
+    var(--clr-secondary) 100%
+  );
+  border-radius: 30px;
+  animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

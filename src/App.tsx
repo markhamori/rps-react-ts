@@ -9,6 +9,9 @@ import Playground from "./components/Playground/Playground";
 import Rules from "./components/Rules/Rules";
 import Select from "./components/Select/Select";
 
+// Style
+import "./App.css";
+
 const App = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const location = useLocation();

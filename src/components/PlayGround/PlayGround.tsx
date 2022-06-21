@@ -8,6 +8,9 @@ import { userScore, compScore } from "../features/scores/Scores";
 // Utils
 import { gameLogic, generatedOption } from "../../utils/gameLogic";
 
+// Style
+import "./Playground.css";
+
 const Playground = () => {
   const [compSelected, setCompSelected] = useState<string>("");
   const selected = useAppSelector((state) => state.selected.selected);
@@ -49,11 +52,15 @@ const Playground = () => {
 
       <div className="playground__result">
         <h1>
-          {gameLogic(selected, compSelected) === 0 ? "You won! Congratz!" : ""}
-          {gameLogic(selected, compSelected) === 1
-            ? "Sorry, computer won."
+          {gameLogic(selected, compSelected) === 0
+            ? "You scored! Congratz!"
             : ""}
-          {gameLogic(selected, compSelected) === 2 ? "It's a Draw." : ""}
+          {gameLogic(selected, compSelected) === 1
+            ? "Sorry, computer scored."
+            : ""}
+          {gameLogic(selected, compSelected) === 2
+            ? "It's a Draw. No score."
+            : ""}
         </h1>
       </div>
 

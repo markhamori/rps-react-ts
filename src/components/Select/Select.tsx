@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { selected } from "../features/selected/Selected";
 import { useAppDispatch } from "../app/hooks";
 
+// Style
+import "./Select.css";
+
 const Select = () => {
   const dispatch = useAppDispatch();
 

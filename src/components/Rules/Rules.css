@@ -1,0 +1,38 @@
+.rules__modal {
+  animation: expand 0.3s ease forwards;
+}
+
+.rules__modal p {
+  font-size: 14px;
+  text-align: justify;
+  animation: slideIn 0.6s ease forwards;
+}
+
+.rules__modal p span {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  width: 32px;
+  border: 2px solid var(--clr-secondary);
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: var(--fs-lg);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(500px) scale(0.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: translateX(1400px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

@@ -1,5 +1,8 @@
 import React from "react";
 
+// Style
+import "./Rules.css";
+
 const Rules = () => {
   return (
     <div className="rules__modal">
