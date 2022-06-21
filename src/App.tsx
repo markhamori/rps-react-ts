@@ -6,6 +6,7 @@ import Main from "./components/Main/Main";
 import Playground from "./components/Playground/Playground";
 import Rules from "./components/Rules/Rules";
 import Select from "./components/Select/Select";
+import NotFound from "./components/NotFound/NotFound";
 
 // Style
 import "./App.css";
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/" element={<Main />} />
         <Route path="/select" element={<Select />} />
         <Route path="/playground" element={<Playground />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
