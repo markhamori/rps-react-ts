@@ -4,11 +4,8 @@ const Rules = () => {
   return (
     <div className="rules__modal">
       <h3>
-        Although the game has a lot of complexity to it, the rules to play it
-        are pretty simple. The original game is played where players deliver
-        hand signals that will represent the elements of the game; rock, paper
-        and scissors. Here you can only choose from the elements. The outcome of
-        the game is determined by 4 simple rules:
+        Here you can choose from the elements: rock, paper and scissors. The
+        outcome of the game is determined by 4 simple rules:
       </h3>
       <p>
         <span>1</span> Rock wins against scissors.

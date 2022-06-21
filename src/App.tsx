@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { BiHelpCircle } from "react-icons/bi";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
@@ -11,6 +11,12 @@ import Select from "./components/Select/Select";
 
 const App = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.pathname === "/playground") navigate("/");
+  }, []);
 
   return (
     <div className="app">

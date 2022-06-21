@@ -76,9 +76,7 @@ const Playground = () => {
         <Link to="/select">
           <button>Play again?</button>
         </Link>
-        <p className="playground__infoText">
-          Refresh the page if you want <br /> to reset the current score.
-        </p>
+        <button onClick={() => window.location.reload()}>Reset</button>
       </Fragment>
     </div>
   );
