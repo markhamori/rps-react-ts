@@ -9,7 +9,7 @@ const Main = () => {
     <div className="main">
       <h1>Rock, paper, scissors</h1>
       <Link to="/select">
-        <button>Start</button>
+        <button>Play!</button>
       </Link>
     </div>
   );
