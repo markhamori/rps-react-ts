@@ -138,7 +138,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   text-align: center;
-  animation: slideIn .4s ease forwards;
+  animation: grow .4s ease forwards;
 }
 
 .playground__result {
@@ -152,6 +152,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   gap: 5rem;
+  animation: grow .6s ease forwards;
 }
 
 .playground__scores h2 span {
@@ -162,6 +163,7 @@ button:focus {
   width: 70px;
   background-color: rgba(183, 21, 90, 0.9);
   color: var(--clr-light);
+  
 }
 
 .playground__images {
@@ -223,5 +225,14 @@ button:focus {
   }
   100% {
     transform: translateX(0px);
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
