@@ -11,6 +11,7 @@ const Select = () => {
 
   return (
     <div>
+      <p>Select an option:</p>
       <Link to="/playground">
         <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
           rock
