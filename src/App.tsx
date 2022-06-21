@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import { BiHelpCircle } from "react-icons/bi";
-import { AiOutlineCloseCircle } from "react-icons/ai";
 
 // Components
 import Main from "./components/Main/Main";
@@ -13,7 +11,6 @@ import Select from "./components/Select/Select";
 import "./App.css";
 
 const App = () => {
-  const [openModal, setOpenModal] = useState<boolean>(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -23,16 +20,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="app__rules">
-        {openModal && <Rules />}
-        <div
-          className="app__rules--handler"
-          onClick={() => setOpenModal(!openModal)}
-        >
-          {openModal ? <AiOutlineCloseCircle /> : <BiHelpCircle />}
-        </div>
-      </div>
-
+      <Rules />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/select" element={<Select />} />

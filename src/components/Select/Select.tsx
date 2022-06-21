@@ -14,16 +14,25 @@ const Select = () => {
 
   return (
     <div className="select">
-      <h1>Select an element:</h1>
+      <h1 className="select__title">Select an element:</h1>
 
       <Link to="/playground">
-        <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
+        <button
+          className="select__button"
+          onClick={(e) => dispatch(selected(handleSelect(e)))}
+        >
           rock
         </button>
-        <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
+        <button
+          className="select__button"
+          onClick={(e) => dispatch(selected(handleSelect(e)))}
+        >
           paper
         </button>
-        <button onClick={(e) => dispatch(selected(handleSelect(e)))}>
+        <button
+          className="select__button"
+          onClick={(e) => dispatch(selected(handleSelect(e)))}
+        >
           scissors
         </button>
       </Link>

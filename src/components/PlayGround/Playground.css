@@ -27,9 +27,9 @@
   width: 120px;
   text-align: center;
   margin: auto;
-  border-radius: 10px;
-  background-color: var(--clr-primary);
-  color: var(--clr-light);
+  border-radius: 20px;
+  border: 2px solid var(--clr-primary);
+  color: var(--clr-dark);
 }
 
 .playground__images {
@@ -41,7 +41,7 @@
   width: 100%;
 }
 
-.playground__images--div {
+.playground__images--block {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -51,7 +51,7 @@
   margin-bottom: 2rem;
 }
 
-.playground__images--div p {
+.playground__images--block p {
   padding-top: 0.3rem;
   width: 120px;
   height: 40px;
@@ -62,17 +62,17 @@
   font-weight: 600;
 }
 
-.playground__images--div h5 {
+.playground__images--block h5 {
   position: absolute;
   font-weight: 300;
   font-size: var(--fs-xxs);
   bottom: 2.8rem;
 }
 
-.playground__infoText {
-  margin-top: 1rem;
-  font-size: 14px;
-  color: var(--clr-dark);
+.playground__options {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
 
 @keyframes grow {

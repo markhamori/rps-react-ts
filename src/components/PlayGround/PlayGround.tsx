@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // State management
@@ -38,20 +38,20 @@ const Playground = () => {
   return (
     <div className="playground">
       <div className="playground__scores">
-        <h2>
-          <span>{score.userScore}</span>
-          <br />
+        <h2 className="playground__scores-title">
           You
-        </h2>
-        <h2>
-          <span>{score.compScore}</span>
           <br />
-          Comp
+          <span>{score.userScore}</span>
+        </h2>
+        <h2 className="playground__scores-title">
+          Computer
+          <br />
+          <span>{score.compScore}</span>
         </h2>
       </div>
 
       <div className="playground__result">
-        <h1>
+        <h1 className="playground__result-title">
           {gameLogic(selected, compSelected) === 0
             ? "You scored! Congratz!"
             : ""}
@@ -65,12 +65,12 @@ const Playground = () => {
       </div>
 
       <div className="playground__images">
-        <div className="playground__images--div">
+        <div className="playground__images--block">
           <img src={`./images/${selected}.svg`} alt={selected} />
           <h5>Your choice</h5>
           <p>{selected}</p>
         </div>
-        <div className="playground__images--div">
+        <div className="playground__images--block">
           {compSelected && (
             <img src={`./images/${compSelected}.svg`} alt={compSelected} />
           )}
@@ -79,12 +79,17 @@ const Playground = () => {
         </div>
       </div>
 
-      <Fragment>
+      <div className="playground__options">
         <Link to="/select">
-          <button>Play again?</button>
+          <button className="playground__options-button">Play again?</button>
         </Link>
-        <button onClick={() => window.location.reload()}>Reset</button>
-      </Fragment>
+        <button
+          className="playground__options-button"
+          onClick={() => window.location.reload()}
+        >
+          Reset
+        </button>
+      </div>
     </div>
   );
 };
