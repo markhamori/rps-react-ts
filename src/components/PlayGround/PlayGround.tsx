@@ -5,8 +5,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { userScore, compScore } from "../features/scores/Scores";
 
 // Utils
-import { generatedOption } from "../../utils/computerNumGen";
-import { gameLogic } from "../../utils/gameLogic";
+import { gameLogic, generatedOption } from "../../utils/gameLogic";
 
 // Components
 import Select from "../Select/Select";
@@ -38,24 +37,31 @@ const Playground = () => {
 
   return (
     <div>
-      <p>You: {score.userScore}</p>
-      <p>Comp: {score.compScore}</p>
-      <hr />
-      <p>{selected}</p>
-      <p>{compSelected && compSelected}</p>
-      <hr />
-      <p>
-        {gameLogic(selected, compSelected) === 0 ? "You won! Congratz!" : ""}
-        {gameLogic(selected, compSelected) === 1 ? "Computer won." : ""}
-        {gameLogic(selected, compSelected) === 2 ? "Draw." : ""}
-      </p>
-      <hr />
-      <p>Do you want to play again?</p>
-      <button>
-        <Link to="/select">
-          Play again?
-        </Link>
-      </button>
+      <div>
+        <p>You: {score.userScore}</p>
+        <p>Comp: {score.compScore}</p>
+      </div>
+      <div>
+        <p>{selected}</p>
+        <p>{compSelected && compSelected}</p>
+      </div>
+      <div>
+        <p>
+          {gameLogic(selected, compSelected) === 0 ? "You won! Congratz!" : ""}
+          {gameLogic(selected, compSelected) === 1 ? "Computer won." : ""}
+          {gameLogic(selected, compSelected) === 2 ? "Draw." : ""}
+        </p>
+      </div>
+      
+      <div>
+        <p>Do you want to play again?</p>
+        <button>
+          <Link to="/select">
+            Play again?
+          </Link>
+        </button>
+      </div>
+      
     </div>
   );
 };

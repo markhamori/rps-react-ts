@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Components
 import Main from "./components/Main/Main";
@@ -13,19 +13,13 @@ const App = () => {
   return (
     <div>
       <div>
-        <h1>Rock, paper, scissors</h1>
-        <button>
-          <Link to="/rules">
-            Rules
-          </Link>
-        </button>
+        {/* <Rules/> */}
       </div>
       
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/select" element={<Select />} />
         <Route path="/playground" element={<Playground />} />
-        <Route path="/rules" element={<Rules />} />
       </Routes>
     </div>
   );
