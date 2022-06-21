@@ -27,19 +27,19 @@ export const gameLogic2 = (userOption: string, compOption: string): number => {
 export const gameLogic = (userOption: string, compOption: string): number => {
   switch (userOption) {
     case "rock":
-      if(compOption === "scissors") return 0
-      if(compOption === "paper") return 1
-      break
+      if (compOption === "scissors") return 0;
+      if (compOption === "paper") return 1;
+      break;
 
     case "scissors":
-      if(compOption === "paper") return 0
-      if(compOption === "rock") return 1
-      break
+      if (compOption === "paper") return 0;
+      if (compOption === "rock") return 1;
+      break;
 
     case "paper":
-      if(compOption === "rock") return 0
-      if(compOption === "scissors") return 1
-      break
+      if (compOption === "rock") return 0;
+      if (compOption === "scissors") return 1;
+      break;
   }
-  return 2
-}
+  return 2;
+};

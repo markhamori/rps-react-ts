@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // State management
@@ -15,35 +15,44 @@ const Playground = () => {
   const dispatch = useAppDispatch();
 
   const dispatchScore = () => {
-    if(gameLogic(selected, compSelected) === 0) {
-      return dispatch(userScore())
-    } else if(gameLogic(selected, compSelected) === 1) {
-      return dispatch(compScore())
+    if (gameLogic(selected, compSelected) === 0) {
+      return dispatch(userScore());
+    } else if (gameLogic(selected, compSelected) === 1) {
+      return dispatch(compScore());
     } else {
-      return
-    };
-  }
+      return;
+    }
+  };
 
   useEffect(() => {
     setCompSelected(generatedOption());
   }, [selected]);
 
   useEffect(() => {
-    dispatchScore()
-  },[selected, compSelected])
+    dispatchScore();
+  }, [selected, compSelected]);
 
   return (
     <div className="playground">
-     
       <div className="playground__scores">
-        <h2><span>{score.userScore}</span><br/>You</h2>
-        <h2><span>{score.compScore}</span><br/>Comp</h2>
+        <h2>
+          <span>{score.userScore}</span>
+          <br />
+          You
+        </h2>
+        <h2>
+          <span>{score.compScore}</span>
+          <br />
+          Comp
+        </h2>
       </div>
 
       <div className="playground__result">
         <h1>
           {gameLogic(selected, compSelected) === 0 ? "You won! Congratz!" : ""}
-          {gameLogic(selected, compSelected) === 1 ? "Sorry, computer won." : ""}
+          {gameLogic(selected, compSelected) === 1
+            ? "Sorry, computer won."
+            : ""}
           {gameLogic(selected, compSelected) === 2 ? "It's a Draw." : ""}
         </h1>
       </div>
@@ -51,26 +60,26 @@ const Playground = () => {
       <div className="playground__images">
         <div className="playground__images--div">
           <img src={`./images/${selected}.svg`} alt={selected} />
+          <h5>Your choice</h5>
           <p>{selected}</p>
         </div>
         <div className="playground__images--div">
           {compSelected && (
             <img src={`./images/${compSelected}.svg`} alt={compSelected} />
-            )}
-          <p>{compSelected && compSelected}</p>
+          )}
+          <h5>Comp choice</h5>
+          <p>{compSelected}</p>
         </div>
-        
       </div>
-      
-      <div>
-          <Link to="/select">
-            <button>
-            Play again?
-            </button>
-          </Link>
-          <p className="playground__infoText">Refresh the page if you want <br/> to reset the current score.</p>
-      </div>
-      
+
+      <Fragment>
+        <Link to="/select">
+          <button>Play again?</button>
+        </Link>
+        <p className="playground__infoText">
+          Refresh the page if you want <br /> to reset the current score.
+        </p>
+      </Fragment>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { BiHelpCircle } from "react-icons/bi"
+import { BiHelpCircle } from "react-icons/bi";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 // Components
 import Main from "./components/Main/Main";
@@ -13,15 +14,16 @@ const App = () => {
 
   return (
     <div className="app">
-      <div className="app_rules">
-        {openModal && (
-          <Rules/>
-        )}
-        <div className="app__rules--handler" onClick={() => setOpenModal(!openModal)}>
-          <BiHelpCircle/>
+      <div className="app__rules">
+        {openModal && <Rules />}
+        <div
+          className="app__rules--handler"
+          onClick={() => setOpenModal(!openModal)}
+        >
+          {openModal ? <AiOutlineCloseCircle /> : <BiHelpCircle />}
         </div>
       </div>
-      
+
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/select" element={<Select />} />
