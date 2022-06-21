@@ -1,19 +1,26 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { BiHelpCircle } from "react-icons/bi"
 
 // Components
 import Main from "./components/Main/Main";
-
-// Styles
-import "./App.css";
 import Playground from "./components/Playground/Playground";
 import Rules from "./components/Rules/Rules";
 import Select from "./components/Select/Select";
 
 const App = () => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
   return (
-    <div>
-      <div>
-        {/* <Rules/> */}
+    <div className="app">
+      <div className="app_rules">
+        <div className="app__rules--handler" onClick={() => setOpenModal(!openModal)}>
+          <BiHelpCircle/>
+          <p>Rules</p>
+        </div>
+        {openModal && (
+          <Rules/>
+        )}
       </div>
       
       <Routes>

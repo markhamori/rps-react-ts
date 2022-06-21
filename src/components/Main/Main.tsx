@@ -5,11 +5,11 @@ const Main = () => {
   return (
     <div>
       <h1>Rock, paper, scissors</h1>
-      <button>
         <Link to="/select">
-          Start
+          <button>
+              Start
+          </button>
         </Link>
-      </button>
     </div>
   );
 };

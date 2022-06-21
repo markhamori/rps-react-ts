@@ -48,18 +48,18 @@ const Playground = () => {
       <div>
         <p>
           {gameLogic(selected, compSelected) === 0 ? "You won! Congratz!" : ""}
-          {gameLogic(selected, compSelected) === 1 ? "Computer won." : ""}
-          {gameLogic(selected, compSelected) === 2 ? "Draw." : ""}
+          {gameLogic(selected, compSelected) === 1 ? "Sorry, computer won." : ""}
+          {gameLogic(selected, compSelected) === 2 ? "It's a Draw." : ""}
         </p>
       </div>
       
       <div>
         <p>Do you want to play again?</p>
-        <button>
           <Link to="/select">
+            <button>
             Play again?
+            </button>
           </Link>
-        </button>
       </div>
       
     </div>
