@@ -1,7 +1,7 @@
 enum options {
   "rock" = 0,
   "paper" = 1,
-  "scissor" = 2,
+  "scissors" = 2,
 }
 
 const randomNumber = (): number => {

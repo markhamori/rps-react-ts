@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Main = () => {
   return (
-    <div>
+    <div className="main">
       <h1>Rock, paper, scissors</h1>
         <Link to="/select">
           <button>

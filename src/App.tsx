@@ -14,17 +14,12 @@ const App = () => {
   return (
     <div className="app">
       <div className="app_rules">
-        <div className="app__rules--handler" onClick={() => setOpenModal(!openModal)}>
-          <p>
-            <span>
-              <BiHelpCircle/>
-            </span>
-            Rules
-          </p>
-        </div>
         {openModal && (
           <Rules/>
         )}
+        <div className="app__rules--handler" onClick={() => setOpenModal(!openModal)}>
+          <BiHelpCircle/>
+        </div>
       </div>
       
       <Routes>

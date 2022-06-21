@@ -10,8 +10,8 @@ const Select = () => {
   };
 
   return (
-    <div>
-      <p>Select an option:</p>
+    <div className="select">
+      <h1>Select an option:</h1>
 
       <Link to="/playground">
         <button onClick={(e) => dispatch(selected(handleSelect(e)))}>

@@ -11,6 +11,11 @@ import { gameLogic, generatedOption } from "../../utils/gameLogic";
 import Select from "../Select/Select";
 import { Link } from "react-router-dom";
 
+// Images
+import rock from "../../images/rock.svg"
+import paper from "../../images/paper.svg"
+import scissors from "../../images/scissors.svg"
+
 const Playground = () => {
   const [compSelected, setCompSelected] = useState<string>("");
   const selected = useAppSelector((state) => state.selected.selected);
@@ -36,28 +41,26 @@ const Playground = () => {
   },[selected, compSelected])
 
   return (
-    <div>
-      
-      <div>
-        <p>You: {score.userScore}</p>
-        <p>Comp: {score.compScore}</p>
-      </div>
-      <div>
-        <img src={`../../images/${selected}.svg`} alt={selected} />
-        {compSelected && (
-          <img src={`../../images/${compSelected}.svg`} alt={compSelected} />
-        )}
-      </div>
-      <div>
-        <p>
+    <div className="playground">
+      <div className="playground__result">
+        <h2>
           {gameLogic(selected, compSelected) === 0 ? "You won! Congratz!" : ""}
           {gameLogic(selected, compSelected) === 1 ? "Sorry, computer won." : ""}
           {gameLogic(selected, compSelected) === 2 ? "It's a Draw." : ""}
-        </p>
+        </h2>
+      </div>
+      <div className="playground__scores">
+        <h1><span>{score.userScore}</span><br/>You</h1>
+        <h1><span>{score.compScore}</span><br/>Comp</h1>
+      </div>
+      <div className="playground__images">
+        <img src={`./images/${selected}.svg`} alt={selected} />
+        {compSelected && (
+          <img src={`./images/${compSelected}.svg`} alt={compSelected} />
+        )}
       </div>
       
       <div>
-        <p>Do you want to play again?</p>
           <Link to="/select">
             <button>
             Play again?
