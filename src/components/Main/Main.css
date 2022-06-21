@@ -6,9 +6,10 @@
   justify-content: center;
   text-align: center;
   animation: grow 0.4s ease forwards;
+  overflow: hidden;
 }
 
-.main .main__title {
+.main__title {
   padding-bottom: 1rem;
 }
 

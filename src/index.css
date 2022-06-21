@@ -67,6 +67,8 @@ button {
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 button:hover {
