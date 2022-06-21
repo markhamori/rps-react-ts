@@ -37,13 +37,16 @@ const Playground = () => {
 
   return (
     <div>
+      
       <div>
         <p>You: {score.userScore}</p>
         <p>Comp: {score.compScore}</p>
       </div>
       <div>
-        <p>{selected}</p>
-        <p>{compSelected && compSelected}</p>
+        <img src={`../../images/${selected}.svg`} alt={selected} />
+        {compSelected && (
+          <img src={`../../images/${compSelected}.svg`} alt={compSelected} />
+        )}
       </div>
       <div>
         <p>

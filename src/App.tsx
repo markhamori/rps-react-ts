@@ -15,8 +15,12 @@ const App = () => {
     <div className="app">
       <div className="app_rules">
         <div className="app__rules--handler" onClick={() => setOpenModal(!openModal)}>
-          <BiHelpCircle/>
-          <p>Rules</p>
+          <p>
+            <span>
+              <BiHelpCircle/>
+            </span>
+            Rules
+          </p>
         </div>
         {openModal && (
           <Rules/>
